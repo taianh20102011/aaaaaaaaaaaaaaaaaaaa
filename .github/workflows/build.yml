@@ -6,32 +6,17 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04   # chọn 20.04 để chắc chắn có libncurses5
-
+    runs-on: ubuntu-22.04
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.8"
-
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y zip unzip openjdk-17-jdk \
-            libncurses5 libtinfo5 libgl1-mesa-dev \
-            libgles2-mesa-dev xclip xsel \
-            libjpeg-dev libfreetype6-dev
-
-      - name: Build with Buildozer
+      - uses: actions/checkout@v4
+      - name: Build APK
         uses: digreatbrian/buildozer-action@v2
         with:
+          python-version: 3.11
           buildozer-cmd: buildozer -v android debug
 
-      - name: Upload APK artifact
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: my-kivy-apk
-          path: bin/*.apk
+          name: package
+          path: ./bin/*.apk
