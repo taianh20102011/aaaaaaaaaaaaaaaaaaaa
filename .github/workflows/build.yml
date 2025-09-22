@@ -3,31 +3,20 @@ name: Build APK
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # cho phép build thủ công
 
 jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install buildozer
-        run: |
-          sudo apt update
-          sudo apt install -y buildozer zipalign openjdk-17-jdk adb
-          pip install --upgrade Cython==0.29.33
-
       - name: Build APK
-        run: |
-          buildozer -v android debug
+        uses: digreatbrian/buildozer-action@v2
+        with:
+          python-version: 3.11
+          buildozer-cmd: buildozer -v android debug
 
-      - name: Upload APK artifact
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: APK
-          path: bin/*.apk
+          name: package
+          path: ./bin/*.apk
