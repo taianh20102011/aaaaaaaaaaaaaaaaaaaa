@@ -1,0 +1,67 @@
+[
+  {
+    "id": "s1",
+    "title": "Tin nhắn lạ",
+    "description": "Bạn nhận được tin nhắn yêu cầu gửi mã OTP để nhận quà.",
+    "choices": [
+      "Gửi mã OTP",
+      "Báo cho người lớn",
+      "Gọi lại số lạ",
+      "Xoá tin nhắn"
+    ],
+    "correct_index": 1,
+    "explanation": "Không bao giờ chia sẻ mã OTP. Báo cho người lớn hoặc quản trị."
+  },
+  {
+    "id": "s2",
+    "title": "Lời mời gặp mặt từ người lạ",
+    "description": "Một người quen trên mạng mời bạn gặp ở quán cà phê một mình.",
+    "choices": [
+      "Đồng ý gặp 1-1",
+      "Báo cho phụ huynh và chọn nơi công cộng",
+      "Gửi địa chỉ nhà",
+      "Gửi ảnh giấy tờ"
+    ],
+    "correct_index": 1,
+    "explanation": "Không nên gặp người lạ một mình; hãy thông báo người lớn và chọn nơi công cộng."
+  },
+  {
+    "id": "s3",
+    "title": "Tin nhắn yêu cầu chuyển tiền",
+    "description": "Tin nhắn báo tài khoản bị khoá, yêu cầu chuyển tiền để mở.",
+    "choices": [
+      "Chuyển tiền ngay",
+      "Kiểm tra kênh chính thức và hỏi người lớn",
+      "Gửi OTP để xác minh",
+      "Gọi lại số lạ"
+    ],
+    "correct_index": 1,
+    "explanation": "Đây có thể là lừa đảo. Kiểm tra kênh chính thức, không gửi OTP hay chuyển tiền."
+  },
+  {
+    "id": "s4",
+    "title": "Link lạ trong chat",
+    "description": "Bạn được gửi link bảo 'nhận quà miễn phí' từ người lạ.",
+    "choices": [
+      "Click ngay",
+      "Hỏi người gửi",
+      "Không click và báo người lớn",
+      "Chia sẻ link cho bạn bè"
+    ],
+    "correct_index": 2,
+    "explanation": "Không click link lạ, có thể chứa mã độc."
+  },
+  {
+    "id": "s5",
+    "title": "Yêu cầu địa chỉ nhà",
+    "description": "Người lạ trên mạng yêu cầu địa chỉ để gửi quà.",
+    "choices": [
+      "Gửi địa chỉ thật",
+      "Không gửi, báo cho người lớn",
+      "Gửi địa chỉ giả",
+      "Hẹn giao trong game"
+    ],
+    "correct_index": 1,
+    "explanation": "Không cung cấp thông tin cá nhân với người lạ."
+  }
+]
