@@ -14,13 +14,14 @@ jobs:
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          workdir: test_app
-          buildozer_version: stable
+          workdir: test_app          # thư mục chứa buildozer.spec
+          buildozer_version: stable  # hoặc bạn có thể để "latest"
         env:
-          USER: root   # bắt buộc phải override user để tránh lỗi chown invalid user
+          USER: root
+          PIP_BREAK_SYSTEM_PACKAGES: "1"   # cho phép pip cài buildozer
 
-      - name: Upload artifacts
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: package
+          name: apk-package
           path: ${{ steps.buildozer.outputs.filename }}
