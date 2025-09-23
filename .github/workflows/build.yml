@@ -11,13 +11,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v2   # nên dùng v2
+        uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
           workdir: test_app
           buildozer_version: stable
         env:
-          USER: root   # fix lỗi "invalid user: user"
+          USER: root   # bắt buộc phải override user để tránh lỗi chown invalid user
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
